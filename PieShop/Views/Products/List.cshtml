@@ -1,0 +1,26 @@
+﻿@model PieShop.ViewModels.ProductlistViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Den Shop</title>
+    </head>
+<body>
+    <h1>@Model.CurrentCategory</h1>
+    @foreach (var item in Model.AllProduct)
+    {
+<div>
+    <h2>@item.Name</h2>
+    <h2>@item.Price.ToString("c")</h2>
+    <h2>@item.Category.CategoryName</h2>
+</div>
+    }
+</body>
+    </html>

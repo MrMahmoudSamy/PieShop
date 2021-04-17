@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PieShop.Repositories;
-
+using PieShop.ViewModels;
 namespace PieShop.Controllers
 {
     public class ProductController : Controller
@@ -15,7 +15,10 @@ namespace PieShop.Controllers
         }
         public ViewResult List()
         {
-            return View(_productsRepository.AllProducts);
+            ProductlistViewModel productlistViewModel = new ProductlistViewModel();
+            productlistViewModel.AllProduct = _productsRepository.AllProducts;
+            productlistViewModel.CurrentCategory = "Chees Cake";
+            return View(productlistViewModel);
         }
     }
 }

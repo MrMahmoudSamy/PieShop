@@ -5,7 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
+    <None Include="wwwroot\Images\1567523599617.jpeg" />
+    <None Include="wwwroot\Images\cheesecakesmall.jpg" />
+    <None Include="wwwroot\Images\Rhubarb-Pie-6.jpg" />
+    <None Include="wwwroot\Images\strawberrypie.jpg" />
   </ItemGroup>
 
   <ItemGroup>

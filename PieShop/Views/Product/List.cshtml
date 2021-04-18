@@ -5,16 +5,18 @@
 @{
 }
 
-  
-
-    <h1>@Model.CurrentCategory</h1>
-    <div class="card-deck">
-        @foreach (var item in Model.AllProduct)
-        {
 
 
+<h1>@Model.CurrentCategory</h1>
+
+
+<div class="card-deck">
+
+    @foreach (var item in Model.AllProduct)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
             <div class="card">
-                <img class="card-img-top" src="@Url.Content(item.ImageThumbnailUrl)" alt="Card image cap">
+                <img class="card-img-top-custom" src="@Url.Content(item.ImageThumbnailUrl)" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title ">@item.Name</h5>
                     <h5 class="card-text fa-pull-right">@item.Price.ToString("c")</h5>
@@ -25,8 +27,10 @@
                     <small class="text-muted">Last updated 3 mins ago</small>
                 </div>
             </div>
+        </div>
+    }
+
+</div>
 
 
-        }
-    </div>
 

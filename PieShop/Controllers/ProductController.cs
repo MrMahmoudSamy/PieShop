@@ -20,5 +20,12 @@ namespace PieShop.Controllers
             productlistViewModel.CurrentCategory = "Chees Cake";
             return View(productlistViewModel);
         }
+        public IActionResult Details(int id)
+        {
+            var product = _productsRepository.GetPieById(id);
+            if (product == null)
+                return NotFound();
+            return View(product);
+        }
     }
 }

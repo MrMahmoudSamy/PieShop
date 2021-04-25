@@ -17,6 +17,13 @@ body {
     object-fit: cover;
 }
 
+
+.carousel-item img {
+    
+    height: 400px;
+    max-height: 400px;
+}
+
 .slide-image {
     width: 100%;
 }

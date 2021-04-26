@@ -12,7 +12,10 @@
         </div>
 
         <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
+           <div class="addToCart">
+               <a class="btn btn-primary" asp-controller="ShoppingCart" 
+                  asp-action="AddToShoppingCart" asp-route-productId="@Model.ProductId">Add to cart</a>
+           </div>
         </div>
     </div>
 </div>

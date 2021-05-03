@@ -31,8 +31,8 @@ namespace PieShop.Repositories
                 var orderDetail = new OrderDetail
                 {
                     Amount = shoppingCartItem.Amount,
-                    //PieId = shoppingCartItem.Pie.PieId,
-                    //Price = shoppingCartItem.Pie.Price
+                    ProductId = shoppingCartItem.Product.ProductId,
+                    Price = shoppingCartItem.Product.Price
                 };
 
                 order.OrderDetails.Add(orderDetail);

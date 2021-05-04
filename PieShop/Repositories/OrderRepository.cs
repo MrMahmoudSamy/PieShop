@@ -37,6 +37,7 @@ namespace PieShop.Repositories
 
                 order.OrderDetails.Add(orderDetail);
             }
+            _context.SaveChanges();
         }
     }
 }

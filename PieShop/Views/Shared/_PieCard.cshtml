@@ -6,7 +6,7 @@
         <div class="card-body">
             <h5 class="card-title ">
                 @*<a asp-controller="Product" asp-action="Details" asp-route-id="@Model.ProductId"> @Model.Name</a>*@
-                <a asp-controller="Product" asp-action="Index" asp-route-id="@Model.ProductId"> @Model.Name</a>
+                <a asp-controller="Product" asp-action="Details" asp-route-id="@Model.ProductId" asp-route-slug="@Model.Slug"> @Model.Name</a>
             </h5>
             <h5 class="card-text fa-pull-right">@Model.Price.ToString("c")</h5>
             <p class="card-text fa-pull-left">@Model.ShortDescription</p>
@@ -15,7 +15,7 @@
         <div class="card-footer">
            <div class="addToCart">
                <a class="btn btn-primary" asp-controller="ShoppingCart" 
-                  asp-action="AddToShoppingCart" asp-route-productId="@Model.ProductId">Add to cart</a>
+                  asp-action="AddToShoppingCart" asp-route-productId="@Model.ProductId" asp-route-slug="@Model.Slug">Add to cart</a>
            </div>
         </div>
     </div>

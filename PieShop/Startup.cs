@@ -74,16 +74,22 @@ namespace PieShop
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+               name: "default",
+               pattern: "{controller=Home}/{action=Index}/{id?}/{slug?}");
+
                // endpoints.MapControllerRoute(
                //     name: "blog",
                //pattern: "blog/{*article}",
                //defaults: new { controller = "Blog", action = "Article" });
 
 
-                endpoints.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-            endpoints.MapRazorPages();
+           //endpoints.MapControllerRoute(
+           //name: "default",
+           //pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+           endpoints.MapRazorPages();
         });
 
         }

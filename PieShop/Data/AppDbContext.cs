@@ -237,7 +237,7 @@ namespace PieShop.Data
                 ImageThumbnailUrl =
                   "~/Images/StrawberryCheeseCake.jpg",
                 AllergyInformation = "",
-                Slug = "lemon-cheese-cake",
+               
                 Notes = "<h1>Hi I'm From Database</h1>"
             });
         }

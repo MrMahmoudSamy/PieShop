@@ -8,5 +8,6 @@ namespace PieShop.Repositories
         IEnumerable<Product> AllProducts { get; }
         IEnumerable<Product> ProductOfTheWeek { get; }
         Product GetPieById(int productId);
+        Product GetHtmlTagsById(int productId);
     }
 }

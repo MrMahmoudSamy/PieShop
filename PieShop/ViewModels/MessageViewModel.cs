@@ -8,5 +8,6 @@ namespace PieShop.ViewModels
     public class MessageViewModel
     {
         public string CheckoutComleteMessage { get; set; }
+       
     }
 }

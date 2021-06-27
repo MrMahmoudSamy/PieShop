@@ -24,5 +24,17 @@ namespace PieShop.Controllers
             };
             return View(homeViewmodel);
         }
+
+        [Route("HtmlReturn/{id}/{slug}")]
+       
+        public IActionResult HtmlReturn(int id, string slug)
+        {
+            var product = _productsRepository.GetHtmlTagsById(id);
+            if (product == null)
+                return NotFound();
+            return View(product);
+        }
+        
+
     }
 }

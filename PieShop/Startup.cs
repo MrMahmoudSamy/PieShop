@@ -31,8 +31,14 @@ namespace PieShop
             services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
             services.AddHttpContextAccessor();
             services.AddSession();
+           // services.AddMvc(option => option.EnableEndpointRouting = false);
+               
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddRouting(option => {
+                option.LowercaseUrls = true;
+                option.AppendTrailingSlash = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,13 +54,38 @@ namespace PieShop
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        name: "Slugy",
+            //        template: "v/{id}/{Slug}",
+            //        defaults: new { controller = "Product", action = "Index" });
+            //});
+
+            //app.UseMvc(routes =>
+            //{
+
+
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=Home}/{action=Index}/{id?}");
+            //});
+
+
             app.UseEndpoints(endpoints =>
             {
+               // endpoints.MapControllerRoute(
+               //     name: "blog",
+               //pattern: "blog/{*article}",
+               //defaults: new { controller = "Blog", action = "Article" });
+
+
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapRazorPages();
-            });
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+            endpoints.MapRazorPages();
+        });
+
         }
     }
 }

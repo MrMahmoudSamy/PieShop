@@ -21,6 +21,11 @@ namespace PieShop.Repositories
 
         public IEnumerable<Product> ProductOfTheWeek { get; }
 
+        public Product GetHtmlTagsById(int productId)
+        {
+            throw new NotImplementedException();
+        }
+
         public Product GetPieById(int productId)
         {
             return AllProducts.FirstOrDefault(p => p.ProductId == productId);

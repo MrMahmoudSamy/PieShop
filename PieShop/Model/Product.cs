@@ -21,5 +21,6 @@ namespace PieShop.Model
         public Category Category { get; set; }
 
         public string Notes { get; set; }
+        public string Slug { get; set; }
     }
 }

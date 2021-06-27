@@ -53,5 +53,13 @@ namespace PieShop.Controllers
                 return NotFound();
             return View(product);
         }
+        public IActionResult Index(int id,string Slug)
+        {
+            var product = _productsRepository.GetPieById(id);
+            if (product == null)
+                return NotFound();
+            Slug = product.Slug;
+            return View(product);
+        }
     }
 }

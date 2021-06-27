@@ -34,5 +34,9 @@ namespace PieShop.Repositories
         {
             return AllProducts.FirstOrDefault(p => p.ProductId == productId);
         }
+        public Product GetHtmlTagsById(int productId)
+        {
+            return AllProducts.FirstOrDefault(p => p.ProductId == productId);
+        }
     }
 }

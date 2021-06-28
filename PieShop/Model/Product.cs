@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using PieShop.Repositories;
 namespace PieShop.Model
 {
     public class Product
@@ -21,8 +21,8 @@ namespace PieShop.Model
         public Category Category { get; set; }
 
         public string Notes { get; set; }
-        public string Slug => Name?.Replace(' ', '-').ToLower() ;
+        public string Slug =>StringExtensions.Slugify(Name);
 
-        //+ '-'+year.tostring
+        //Name?.Replace(' ', '-').ToLower()+ '-'+year.tostring
     }
 }

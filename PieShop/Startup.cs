@@ -78,18 +78,18 @@ namespace PieShop
                name: "default",
                pattern: "{controller=Home}/{action=Index}/{id?}/{slug?}");
 
-               // endpoints.MapControllerRoute(
-               //     name: "blog",
-               //pattern: "blog/{*article}",
-               //defaults: new { controller = "Blog", action = "Article" });
+                endpoints.MapControllerRoute(
+                    name: "blog",
+               pattern: "blog/{*article}",
+               defaults: new { controller = "Product", action = "Index" });
 
 
-           //endpoints.MapControllerRoute(
-           //name: "default",
-           //pattern: "{controller=Home}/{action=Index}/{id?}");
+                //endpoints.MapControllerRoute(
+                //name: "default",
+                //pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
-           endpoints.MapRazorPages();
+                endpoints.MapRazorPages();
         });
 
         }

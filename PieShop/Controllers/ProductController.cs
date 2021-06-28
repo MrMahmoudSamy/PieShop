@@ -46,19 +46,20 @@ namespace PieShop.Controllers
                 CurrentCategory = currentCategory
             });
         }
-        public IActionResult Details(int id)
+        public IActionResult Details(int id,string slug)
         {
             var product = _productsRepository.GetPieById(id);
             if (product == null)
                 return NotFound();
+           
             return View(product);
         }
-        public IActionResult Index(int id,string Slug)
+        public IActionResult Index(int id,string slug)
         {
             var product = _productsRepository.GetPieById(id);
             if (product == null)
                 return NotFound();
-            Slug = product.Slug;
+         
             return View(product);
         }
     }

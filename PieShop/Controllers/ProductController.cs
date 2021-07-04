@@ -24,20 +24,20 @@ namespace PieShop.Controllers
         //    productlistViewModel.CurrentCategory = "Chees Cake";
         //    return View(productlistViewModel);
         //}
-        public ViewResult List(string category)
+        public ViewResult List(int id, string slug)
         {
             IEnumerable<Product> products;
             string currentCategory;
-            if(string.IsNullOrEmpty(category))
+            if(string.IsNullOrEmpty(slug))
             {
                 products = _productsRepository.AllProducts.OrderBy(p => p.ProductId);
                 currentCategory = "All Pies";
             }
             else
             {
-                products=_productsRepository.AllProducts.Where(p=>p.Category.CategoryName==category)
+                products=_productsRepository.AllProducts.Where(p=>p.Category.CategoryId== id)
                     .OrderBy(p => p.ProductId);
-                var cat= _categoryRepository.AllCategories.FirstOrDefault(c => c.CategoryName == category);
+                var cat= _categoryRepository.AllCategories.FirstOrDefault(c => c.CategoryId == id);
                 currentCategory = cat.CategoryName;
             }
             return View(new ProductlistViewModel
@@ -54,6 +54,7 @@ namespace PieShop.Controllers
            
             return View(product);
         }
+        [Route("pie/{id}/{slug}")]
         public IActionResult Index(int id,string slug)
         {
             var product = _productsRepository.GetPieById(id);

@@ -9,12 +9,12 @@
         {
             <li class="dropdown-item">
                 <a asp-controller="Product" asp-action="List"
-                   asp-route-category="@category.CategoryName">@category.CategoryName</a>
+                  asp-route-id="@category.CategoryId" asp-route-slug="@category.CategorySlug">@category.CategoryName</a>
             </li>
         }
         <li class="dropdown-divider"></li>
         <li>
-            <a class="dropdown-item" asp-controller="Product" asp-action="List" asp-route-Category="">View all pies</a>
+            <a class="dropdown-item" asp-controller="Product" asp-action="List" asp-route-id="" asp-route-slug="">View all pies</a>
         </li>
     </ul>
 </li>
